@@ -1,20 +1,23 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <%- include ("../partials/header.ejs") %>
+  <%- include ../partials/header.ejs %>
 </head>
 
 <body>
 
-<%- include ("../partials/nav.ejs") %>
+<%- include ../partials/nav.ejs %>
 
 <div class="container">
-<h2>Database Results</h2>
+<h2> contact information</h2>
 
 <ul>
-    <% results.forEach(function(r) { %>
-        <li><%= r.id %> - <%= r.name %></li>
-    <% }); %>
+        <li>email: <a href="mailto:sjin32@my.centennialcollege.ca">    sjin32@my.centennialcollege.ca
+                </a></li>
+        <li>phone:+1 437 340 1510</li>
+        <li>address:Ontario, Canada</li>
+
+
 </ul>
 
 </div>
