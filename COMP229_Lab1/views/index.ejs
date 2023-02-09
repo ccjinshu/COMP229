@@ -1,11 +1,22 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
-    <h1><%= title %></h1>
-    <p>2023: Welcome to <%= title %></p>
-  </body>
-</html>
+<%-include partials/header.ejs%>
+<%-include partials/main_nav.ejs%>
+  <!--Main nav Navigation-->
+  
+<main class="container">
+  <div class="jumbotron">
+<!--    <h1 class="display-4">Welcome to the <%=title%> Page </h1>-->
+    <div class="container">
+      <%- include('content/'+ page + '.ejs'); %>
+    </div>
+
+  </div>
+  <main>
+
+
+
+  <%-include partials/bottom_nav.ejs%>
+  <%-include partials/footer.ejs%>
+
+
+
+

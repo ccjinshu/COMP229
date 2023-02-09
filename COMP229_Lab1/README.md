@@ -1,3 +1,5 @@
-# COMP229_Lab1
 
+COMP229– Web Application Development
 
+Assignment 1
+Express Portfolio Site 
