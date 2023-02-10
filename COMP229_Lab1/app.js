@@ -6,12 +6,15 @@ Student ID: 301303882
 Date: 2023-02-06
 */
 
+// import createError from 'http-errors';
 let createError = require('http-errors');
+// import express from 'express';
 let express = require('express');
 let path = require('path');
 let cookieParser = require('cookie-parser');
 let logger = require('morgan');
 
+// define routers
 let indexRouter = require('./routes/index');
 let usersRouter = require('./routes/users');
 
@@ -29,6 +32,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'node_modules')));
 
 
+//register routers
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 
