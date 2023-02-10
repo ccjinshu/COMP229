@@ -9,7 +9,7 @@ Date: 2023-02-06
 /*Custom css goes here*/
 /*Global CSS*/
 body {
-    background-image: url("/Assets/images/background.png");
+    background-image: url("/Assets/images/background.jpg");
     background-position: center center;
     background-size: cover !important;
     -webkit-background-size: cover !important;
