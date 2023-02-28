@@ -2,9 +2,10 @@
 /**
 File name: app.js
 Course name: COMP229 Web application development
+Assignment: 2#
 Student Name: Jin Shu
 Student ID: 301303882
-Date: 2023-02-06
+Date: 2023-02-26
 **/
 
 
@@ -12,7 +13,7 @@ Date: 2023-02-06
  * Module dependencies.
  */
 
-var app = require('./app');
+var app = require('./server/config/app');
 var debug = require('debug')('lab1:server');
 var http = require('http');
 

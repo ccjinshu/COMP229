@@ -3,7 +3,7 @@ File name: app.css
 Course name: COMP229 Web application development
 Student Name: Jin Shu
 Student ID: 301303882
-Date: 2023-02-06
+Date: 2023-02-27
 */
 
 /*Custom css goes here*/
@@ -21,12 +21,11 @@ body {
     width: 100%;
     font: 20px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
-body>main>div h1 {
-    color: #f8f5f6;
-    margin-top: 18px;
-    margin-bottom: 18px;
-    margin-left: 12%;
+html {
+    position: relative;
+    min-height: 100%;
 }
+
 html, body {
     min-height: 100%;
 }
@@ -55,8 +54,7 @@ header .banner {
 header .banner-text {
     width: 100%;
     position: relative;
-    right: 58%;
-    padding-top: 20%;
+    padding-top: 10%;
 }
 header .banner-text h1 {
     font: 80px/1.1em 'opensans-bold', sans-serif;
@@ -148,11 +146,8 @@ header .social li a:hover {
     position: relative;
     left: 18%;
 }
-.row {
-    width: 25%;
-    position: relative;
-    left: 40%;
-}
+
+
 .h1contact {
     position: relative;
     right: 12%;
