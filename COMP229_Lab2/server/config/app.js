@@ -20,18 +20,20 @@ let passportLocal = require("passport-local");
 let localStratergy = passportLocal.Strategy;
 let flash = require("connect-flash");
 
-//database_setup
+//mongoDB driver
 let mongoose = require("mongoose");
 let DB = require("./db");
 
-//point mongoose to the DB URI
+//db config
 mongoose.connect(DB.URI, { useNewUrlParser: true, useUnifiedTopology: true });
+
 
 let mongodb = mongoose.connection;
 mongodb.on("error", console.error.bind(console, "connection error:"));
+
 mongodb.once("open", () => {
   console.log("Database Connected");
-});
+}); //connected to the database
 
 let indexRouter = require("../routes/index");
 let usersRouter = require("../routes/users");
