@@ -1,0 +1,178 @@
+/*
+File name: app.css
+Course name: COMP229 Web application development
+Student Name: Jin Shu
+Student ID: 301303882
+Date: 2023-02-27
+*/
+
+/*Custom css goes here*/
+/*Global CSS*/
+body {
+    background-image: url("/Assets/images/background.jpg");
+    background-position: center center;
+    background-size: cover !important;
+    -webkit-background-size: cover !important;
+    -webkit-animation: fadein 0.5s linear forwards;
+    animation: fadein 0.5s linear forwards;
+    position: relative;
+    height: 100%;
+    min-height: 500px;
+    width: 100%;
+    font: 20px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+html, body {
+    min-height: 100%;
+}
+#extraspan {
+    opacity: 0;
+    visibility: hidden;
+}
+/*Home page CSS*/
+header {
+    text-align: center;
+}
+.header {
+    content: '';
+    display: inline-block;
+    vertical-align: middle;
+    height: 100%;
+}
+header .banner {
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0 auto;
+    width: 68%;
+    padding-bottom: 30px;
+    text-align: center;
+}
+header .banner-text {
+    width: 100%;
+    position: relative;
+    padding-top: 10%;
+}
+header .banner-text h1 {
+    font: 80px/1.1em 'opensans-bold', sans-serif;
+    color: #fff;
+    letter-spacing: -2px;
+    margin: 0 auto 18px auto;
+}
+header .banner-text h2 {
+    font: 24px/1.9em 'librebaskerville-regular', serif;
+    color: #dadada;
+    margin: 0 auto;
+}
+header .banner-text h3 span, header .banner-text h3 a {
+    color: #fff;
+}
+header .banner-text hr {
+    width: 60%;
+    margin: 18px auto 24px auto;
+    color: #f8f5f6;
+}
+header .social {
+    margin: 24px 0;
+    padding: 0;
+    font-size: 30px;
+    text-shadow: 0px 1px 2px;
+}
+header .social li {
+    display: inline-block;
+    margin: 0 15px;
+}
+header .social li a {
+    color: #fff;
+}
+header .social li a:hover {
+    color: #2beef5;
+}
+/*About Page CSS*/
+.selfie {
+    width: 200px;
+    height: 300px;
+    background-image: url("/Assets/images/photo.png");
+    background-size: cover !important;
+    -webkit-background-size: cover !important;
+    -webkit-animation: fadein 0.5s linear forwards;
+    animation: fadein 0.5s linear forwards;
+    float: left;
+}
+.descriplist {
+    height: 300px;
+    margin-left: 20px;
+    display: inline-block;
+    font-size: larger;
+    text-shadow: 0px 1px 1px;
+}
+#lottieabout {
+    width: 30vh;
+    height: 30vh;
+    float: right;
+    margin: 0;
+}
+.h-100 {
+    width: 92%;
+    position: relative;
+    left: 3%;
+}
+.about-section h1 {
+    margin-left: 40px;
+}
+/*Projects Page CSS*/
+.serviceanimation {
+    height: 200px;
+    width: 200px;
+}
+.img-thumbnail {
+    height: 100%;
+    width: 100%;
+}
+#table {
+    width: 80%;
+    position: relative;
+    left: 11%;
+    opacity: 0.9;
+}
+
+/*Contact Page CSS*/
+#contact {
+    color: #fff;
+    width: 65%;
+    position: relative;
+    left: 18%;
+}
+
+
+.h1contact {
+    position: relative;
+    right: 12%;
+}
+
+/*Global*/
+
+/*@-webkit-keyframes fadein {*/
+
+/*    from {*/
+/*        opacity: 0;*/
+/*    }*/
+/*    to {*/
+/*        opacity: 0.9;*/
+/*    }*/
+/*}*/
+
+/*@keyframes fadein {*/
+
+/*    from {*/
+/*        opacity: 0;*/
+/*    }*/
+
+/*    to {*/
+/*        opacity: 0.9;*/
+/*    }*/
+/*}*/
+
