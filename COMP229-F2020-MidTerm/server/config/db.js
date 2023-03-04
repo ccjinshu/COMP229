@@ -1,4 +1,10 @@
-
+/*
+File name: db.js
+Course name: COMP229 Web application development
+Student Name: Jin Shu
+Student ID: 301303882
+Date: 2023-03-04
+*/
 module.exports = {
   //local MongoDB deployment ->
   // "URI": "mongodb://localhost/books229"
