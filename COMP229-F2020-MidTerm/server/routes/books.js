@@ -8,20 +8,19 @@ let book = require('../models/books');
 
 /* GET books List page. READ */
 router.get('/', (req, res, next) => {
-  // find all books in the books collection
-  book.find( (err, books) => {
-    if (err) {
-      return console.error(err);
-    }
-    else {
-      res.render('books/index', {
-        title: 'Books',
-        books: books
-      });
-    }
-  });
-
+    // find all books in the books collection
+    book.find((err, books) => {
+        if (err) {
+            return console.error(err);
+        } else {
+            res.render('books/index', {
+                title: 'Books',
+                books: books
+            });
+        }
+    });
 });
+
 
 //  GET the Book Details page in order to add a new Book
 router.get('/add', (req, res, next) => {
@@ -29,7 +28,17 @@ router.get('/add', (req, res, next) => {
     /*****************
      * ADD CODE HERE *
      *****************/
-
+    console.log("add a new book");
+    book.find((err, books) => {
+        if (err) {
+            return console.error(err);
+        } else {
+            res.render('books/details', {
+                title: 'Books',
+                books: books
+            });
+        }
+    });
 });
 
 // POST process the Book Details page and create a new Book - CREATE
@@ -38,6 +47,43 @@ router.post('/add', (req, res, next) => {
     /*****************
      * ADD CODE HERE *
      *****************/
+    // validate request
+    if (!req.body) {
+        let err = "please fill all the fields";
+        console.log(err);
+        res.end(err);
+        return;
+    }
+
+
+    let price = req.body.price;
+    //price have to be a number
+    if (isNaN(price)) {
+        let err = "error: price have to be a number";
+        console.log(err);
+        res.end(err);
+        return;
+    }
+
+
+    let newBook = book({
+        Title: req.body.title,
+        Price: req.body.price,
+        Author: req.body.author,
+        Genre: req.body.genre
+    });
+    book.create(newBook,(err,Book)=>{
+        if(err)
+        {
+            console.log(err);
+            res.end(err);
+        }
+        else
+        {
+            res.redirect('/books');
+        }
+    });
+
 
 });
 
@@ -47,6 +93,19 @@ router.get('/:id', (req, res, next) => {
     /*****************
      * ADD CODE HERE *
      *****************/
+    let id = req.params.id;
+    book.findById(id,(err,bookToEdit)=>{
+        if(err)
+        {
+            console.log(err);
+            res.end(err);
+        }
+        else
+        {
+            res.render('books/details',{title:'Edit Book', books: bookToEdit} );
+        }
+    });
+
 });
 
 // POST - process the information passed from the details form and update the document
@@ -56,6 +115,36 @@ router.post('/:id', (req, res, next) => {
      * ADD CODE HERE *
      *****************/
 
+    let id = req.params.id;
+    let price = req.body.price;
+    //price have to be a number
+    if (isNaN(price)) {
+        let err = "error: price have to be a number";
+        console.log(err);
+        res.end(err);
+        return;
+    }
+
+
+    let updatedBook = book({
+        _id: id,
+        Title: req.body.title,
+        Price: req.body.price,
+        Author: req.body.author,
+        Genre: req.body.genre
+    });
+
+    book.updateOne({_id: id}, updatedBook, (err) => {
+        if (err) {
+            console.log(err);
+            res.end(err);
+        } else {
+            // refresh the book list
+            res.redirect('/books');
+        }
+    });
+
+
 });
 
 // GET - process the delete by user id
@@ -64,6 +153,18 @@ router.get('/delete/:id', (req, res, next) => {
     /*****************
      * ADD CODE HERE *
      *****************/
+    console.log("delete action");
+    let id = req.params.id;  // get the id from the url
+    book.remove({_id: id}, (err) => {
+        if (err) {
+            console.log(err);
+            res.end(err);
+        } else {
+            // refresh the book list
+            res.redirect('/books');
+        }
+    });
+
 });
 
 
